@@ -1,21 +1,32 @@
-<script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <ToggleButton type="switch" v-model:active="active">MyButton1</ToggleButton>
+  <!-- <ToggleButton lg background-white>MyButton2</ToggleButton>
+  <ToggleButton sm pill text-red>MyButton3</ToggleButton>
+  <ToggleButton md pill text-green background-pink>MyButton4</ToggleButton>
+  <ToggleButton lg pill @click.prevent="onClick">MyButton5</ToggleButton>
+  <ToggleButton >MyButton6</ToggleButton> -->
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<script>
+import ToggleButton from "./components/ToggleButton.vue"
+
+
+export default {
+  name: 'App',
+  data(){
+    return{
+      active: false,
+    }
+  },
+  watch: {
+    active(new_val) {
+      alert(new_val)
+    }
+  },
+  methods: {
+  },
+  components: {
+    ToggleButton,
+  },
 }
-</style>
+</script>

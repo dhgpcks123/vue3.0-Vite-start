@@ -1,32 +1,27 @@
 <template>
-  <ToggleButton type="switch" v-model:active="active">MyButton1</ToggleButton>
-  <!-- <ToggleButton lg background-white>MyButton2</ToggleButton>
-  <ToggleButton sm pill text-red>MyButton3</ToggleButton>
-  <ToggleButton md pill text-green background-pink>MyButton4</ToggleButton>
-  <ToggleButton lg pill @click.prevent="onClick">MyButton5</ToggleButton>
-  <ToggleButton >MyButton6</ToggleButton> -->
+  <MyTable :header="header" :rows="rows"/>  
 </template>
 
 <script>
-import ToggleButton from "./components/ToggleButton.vue"
-
+import MyTable from './components/Table.vue'
 
 export default {
   name: 'App',
-  data(){
-    return{
-      active: false,
+  data() {
+    return {
+      header: ['first title', 'second title', 'third title'],
+      rows: [
+        [{data: 'first content'}, {data: 'second content'}, {data: 'second content'}],
+        [{data: 'first content2', colspan: 2}],
+        [{data: 'first content2'}],
+        [{data: 'rowspan', rowspan: 3}, {data: 'ge'}],
+        [{data: 'first content2'}],
+        [{data: 'first content2'}],
+      ],
     }
-  },
-  watch: {
-    active(new_val) {
-      alert(new_val)
-    }
-  },
-  methods: {
   },
   components: {
-    ToggleButton,
+    MyTable,
   },
 }
 </script>

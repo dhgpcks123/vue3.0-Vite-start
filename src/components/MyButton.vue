@@ -14,14 +14,14 @@ export default{
         const allowed = ['button', 'submit', 'reset']
         return allowed.includes(value)
       },
-      sm: Boolean,
-      md: {
-        type: Boolean,
-        default: true,
-      },
-      lg: Boolean,
-      pill: Boolean,
-    }
+    },
+    sm: Boolean,
+    md: {
+      type: Boolean,
+      default: true,
+    },
+    lg: Boolean,
+    pill: Boolean,
   },
   setup(props, context){
     const classes = []
